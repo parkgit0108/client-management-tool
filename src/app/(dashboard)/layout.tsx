@@ -14,7 +14,7 @@ export default function DashboardLayout({
       <div className="w-[14%] md:w-[8%] lg:w-[14%] xl:w-[14%] p-4">
         <Link href="/" className="flex items-center lg:justify-start gap-2">
           <Image
-            src="/avatar.png"
+            src="/dumbell.svg"
             alt="logo"
             width={32}
             height={32}
