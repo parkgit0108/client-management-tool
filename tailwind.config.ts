@@ -20,6 +20,7 @@ const config: Config = {
         myBlueLight: "#9CCDDC",
         myGray: "#CED7E0",
         myYellowLight: "#FEFCE8",
+        myPink: "#FADFDB",
       },
     },
   },
