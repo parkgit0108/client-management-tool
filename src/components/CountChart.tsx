@@ -17,7 +17,7 @@ const data = [
   {
     name: "Female",
     count: 50,
-    fill: "#FADFDB",
+    fill: "#CAEEC2",
   },
   {
     name: "Male",
@@ -30,7 +30,7 @@ const CountChart = () => {
   return (
     <div className="bg-white rounded-xl w-full h-full p-4">
       <div className="flex justify-between items-center">
-        <h1 className="text-lg font-semi-bold">Clients</h1>
+        <h1 className="text-lg font-semibold">Clients</h1>
         <Image src="/moreDark.png" alt="" width={20} height={20} />
       </div>
       <div className="relative w-full h-[75%]">

@@ -124,10 +124,10 @@ export const trainersData = [
   },
 ];
 
-export const clientsData = [
+export const membersData = [
   {
     id: 1,
-    studentId: "1234567890",
+    memberId: "1234567890",
     name: "John Doe",
     email: "john@doe.com",
     photo:
@@ -139,7 +139,7 @@ export const clientsData = [
   },
   {
     id: 2,
-    studentId: "1234567890",
+    memberId: "1234567890",
     name: "Jane Doe",
     email: "jane@doe.com",
     photo:
@@ -151,7 +151,7 @@ export const clientsData = [
   },
   {
     id: 3,
-    studentId: "1234567890",
+    memberId: "1234567890",
     name: "Mike Geller",
     email: "mike@geller.com",
     photo:
@@ -163,7 +163,7 @@ export const clientsData = [
   },
   {
     id: 4,
-    studentId: "1234567890",
+    memberId: "1234567890",
     name: "Jay French",
     email: "jay@gmail.com",
     photo:
@@ -175,7 +175,7 @@ export const clientsData = [
   },
   {
     id: 5,
-    studentId: "1234567890",
+    memberId: "1234567890",
     name: "Jane Smith",
     email: "jane@gmail.com",
     photo:
@@ -187,7 +187,7 @@ export const clientsData = [
   },
   {
     id: 6,
-    studentId: "1234567890",
+    memberId: "1234567890",
     name: "Anna Santiago",
     email: "anna@gmail.com",
     photo:
@@ -199,7 +199,7 @@ export const clientsData = [
   },
   {
     id: 7,
-    studentId: "1234567890",
+    memberId: "1234567890",
     name: "Allen Black",
     email: "allen@black.com",
     photo:
@@ -211,7 +211,7 @@ export const clientsData = [
   },
   {
     id: 8,
-    studentId: "1234567890",
+    memberId: "1234567890",
     name: "Ophelia Castro",
     email: "ophelia@castro.com",
     photo:
@@ -223,7 +223,7 @@ export const clientsData = [
   },
   {
     id: 9,
-    studentId: "1234567890",
+    memberId: "1234567890",
     name: "Derek Briggs",
     email: "derek@briggs.com",
     photo:
@@ -235,7 +235,7 @@ export const clientsData = [
   },
   {
     id: 10,
-    studentId: "1234567890",
+    memberId: "1234567890",
     name: "John Glover",
     email: "john@glover.com",
     photo:
@@ -247,11 +247,11 @@ export const clientsData = [
   },
 ];
 
-export const caregiversData = [
+export const ptClientsData = [
   {
     id: 1,
     name: "John Doe",
-    clients: ["Sarah Brewer"],
+    members: ["Sarah Brewer"],
     email: "john@doe.com",
     phone: "1234567890",
     address: "123 Main St, Anytown, NZ",
@@ -259,7 +259,7 @@ export const caregiversData = [
   {
     id: 2,
     name: "Jane Doe",
-    clients: ["Cecilia Bradley"],
+    members: ["Cecilia Bradley"],
     email: "jane@doe.com",
     phone: "1234567890",
     address: "123 Main St, Anytown, NZ",
