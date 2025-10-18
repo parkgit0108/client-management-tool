@@ -20,7 +20,7 @@ export default function DashboardLayout({
             height={32}
             className="rounded-full"
           />
-          <span className="hidden lg:block">The Fitness Hub</span>
+          <span className="hidden lg:block font-bold">The Fitness Hub</span>
         </Link>
         <Menu />
       </div>
