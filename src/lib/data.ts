@@ -850,149 +850,149 @@ export const announcementsData = [
   },
 ];
 
-
-// YOU SHOULD CHANGE THE DATES OF THE EVENTS TO THE CURRENT DATE TO SEE THE EVENTS ON THE CALENDAR
+// Calendar events updated for October 2025 (month 9 = October in JavaScript)
 export const calendarEvents = [
+  // Monday, October 20, 2025
   {
     title: "Hypertrophy",
     allDay: false,
-    start: new Date(2024, 7, 12, 8, 0),
-    end: new Date(2024, 7, 12, 8, 45),
+    start: new Date(2025, 9, 20, 8, 0),
+    end: new Date(2025, 9, 20, 8, 45),
   },
   {
     title: "Strength",
     allDay: false,
-    start: new Date(2024, 7, 12, 9, 0),
-    end: new Date(2024, 7, 12, 9, 45),
+    start: new Date(2025, 9, 20, 9, 0),
+    end: new Date(2025, 9, 20, 9, 45),
   },
   {
     title: "Boxing",
     allDay: false,
-    start: new Date(2024, 7, 12, 10, 0),
-    end: new Date(2024, 7, 12, 10, 45),
+    start: new Date(2025, 9, 20, 10, 0),
+    end: new Date(2025, 9, 20, 10, 45),
   },
   {
     title: "Running",
     allDay: false,
-    start: new Date(2024, 7, 12, 11, 0),
-    end: new Date(2024, 7, 12, 11, 45),
+    start: new Date(2025, 9, 20, 11, 0),
+    end: new Date(2025, 9, 20, 11, 45),
   },
   {
     title: "Crossfit",
     allDay: false,
-    start: new Date(2024, 7, 12, 13, 0),
-    end: new Date(2024, 7, 12, 13, 45),
+    start: new Date(2025, 9, 20, 13, 0),
+    end: new Date(2025, 9, 20, 13, 45),
   },
   {
     title: "Swimming",
     allDay: false,
-    start: new Date(2024, 7, 12, 14, 0),
-    end: new Date(2024, 7, 12, 14, 45),
+    start: new Date(2025, 9, 20, 14, 0),
+    end: new Date(2025, 9, 20, 14, 45),
   },
+  // Tuesday, October 21, 2025
   {
     title: "Strength",
     allDay: false,
-    start: new Date(2024, 7, 13, 9, 0),
-    end: new Date(2024, 7, 13, 9, 45),
+    start: new Date(2025, 9, 21, 9, 0),
+    end: new Date(2025, 9, 21, 9, 45),
   },
   {
     title: "Boxing",
     allDay: false,
-    start: new Date(2024, 7, 13, 10, 0),
-    end: new Date(2024, 7, 13, 10, 45),
+    start: new Date(2025, 9, 21, 10, 0),
+    end: new Date(2025, 9, 21, 10, 45),
   },
   {
     title: "Running",
     allDay: false,
-    start: new Date(2024, 7, 13, 11, 0),
-    end: new Date(2024, 7, 13, 11, 45),
+    start: new Date(2025, 9, 21, 11, 0),
+    end: new Date(2025, 9, 21, 11, 45),
   },
-
   {
     title: "Swimming",
     allDay: false,
-    start: new Date(2024, 7, 13, 14, 0),
-    end: new Date(2024, 7, 13, 14, 45),
+    start: new Date(2025, 9, 21, 14, 0),
+    end: new Date(2025, 9, 21, 14, 45),
   },
+  // Wednesday, October 22, 2025
   {
     title: "Hypertrophy",
     allDay: false,
-    start: new Date(2024, 7, 14, 8, 0),
-    end: new Date(2024, 7, 14, 8, 45),
+    start: new Date(2025, 9, 22, 8, 0),
+    end: new Date(2025, 9, 22, 8, 45),
   },
   {
     title: "Boxing",
     allDay: false,
-    start: new Date(2024, 7, 14, 10, 0),
-    end: new Date(2024, 7, 14, 10, 45),
-  },
-
-  {
-    title: "Crossfit",
-    allDay: false,
-    start: new Date(2024, 7, 14, 13, 0),
-    end: new Date(2024, 7, 14, 13, 45),
-  },
-  {
-    title: "Swimming",
-    allDay: false,
-    start: new Date(2024, 7, 14, 14, 0),
-    end: new Date(2024, 7, 13, 14, 45),
-  },
-  {
-    title: "Strength",
-    allDay: false,
-    start: new Date(2024, 7, 15, 9, 0),
-    end: new Date(2024, 7, 15, 9, 45),
-  },
-  {
-    title: "Boxing",
-    allDay: false,
-    start: new Date(2024, 7, 15, 10, 0),
-    end: new Date(2024, 7, 15, 10, 45),
-  },
-  {
-    title: "Running",
-    allDay: false,
-    start: new Date(2024, 7, 15, 11, 0),
-    end: new Date(2024, 7, 15, 11, 45),
-  },
-
-  {
-    title: "Swimming",
-    allDay: false,
-    start: new Date(2024, 7, 15, 14, 0),
-    end: new Date(2024, 7, 15, 14, 45),
-  },
-  {
-    title: "Hypertrophy",
-    allDay: false,
-    start: new Date(2024, 7, 16, 8, 0),
-    end: new Date(2024, 7, 16, 8, 45),
-  },
-  {
-    title: "Strength",
-    allDay: false,
-    start: new Date(2024, 7, 16, 9, 0),
-    end: new Date(2024, 7, 16, 9, 45),
-  },
-
-  {
-    title: "Running",
-    allDay: false,
-    start: new Date(2024, 7, 16, 11, 0),
-    end: new Date(2024, 7, 16, 11, 45),
+    start: new Date(2025, 9, 22, 10, 0),
+    end: new Date(2025, 9, 22, 10, 45),
   },
   {
     title: "Crossfit",
     allDay: false,
-    start: new Date(2024, 7, 16, 13, 0),
-    end: new Date(2024, 7, 16, 13, 45),
+    start: new Date(2025, 9, 22, 13, 0),
+    end: new Date(2025, 9, 22, 13, 45),
   },
   {
     title: "Swimming",
     allDay: false,
-    start: new Date(2024, 7, 16, 14, 0),
-    end: new Date(2024, 7, 16, 14, 45),
+    start: new Date(2025, 9, 22, 14, 0),
+    end: new Date(2025, 9, 22, 14, 45),
+  },
+  // Thursday, October 23, 2025
+  {
+    title: "Strength",
+    allDay: false,
+    start: new Date(2025, 9, 23, 9, 0),
+    end: new Date(2025, 9, 23, 9, 45),
+  },
+  {
+    title: "Boxing",
+    allDay: false,
+    start: new Date(2025, 9, 23, 10, 0),
+    end: new Date(2025, 9, 23, 10, 45),
+  },
+  {
+    title: "Running",
+    allDay: false,
+    start: new Date(2025, 9, 23, 11, 0),
+    end: new Date(2025, 9, 23, 11, 45),
+  },
+  {
+    title: "Swimming",
+    allDay: false,
+    start: new Date(2025, 9, 23, 14, 0),
+    end: new Date(2025, 9, 23, 14, 45),
+  },
+  // Friday, October 24, 2025
+  {
+    title: "Hypertrophy",
+    allDay: false,
+    start: new Date(2025, 9, 24, 8, 0),
+    end: new Date(2025, 9, 24, 8, 45),
+  },
+  {
+    title: "Strength",
+    allDay: false,
+    start: new Date(2025, 9, 24, 9, 0),
+    end: new Date(2025, 9, 24, 9, 45),
+  },
+  {
+    title: "Running",
+    allDay: false,
+    start: new Date(2025, 9, 24, 11, 0),
+    end: new Date(2025, 9, 24, 11, 45),
+  },
+  {
+    title: "Crossfit",
+    allDay: false,
+    start: new Date(2025, 9, 24, 13, 0),
+    end: new Date(2025, 9, 24, 13, 45),
+  },
+  {
+    title: "Swimming",
+    allDay: false,
+    start: new Date(2025, 9, 24, 14, 0),
+    end: new Date(2025, 9, 24, 14, 45),
   },
 ];

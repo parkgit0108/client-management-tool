@@ -50,8 +50,8 @@ const data = [
   },
 ];
 
-const AttendanceChart = () => {
-    //Legend order function so present legend comes first
+const VisitsChart = () => {
+  //Legend order function so present legend comes first
   const renderLegend = (props: any) => {
     return (
       <ul
@@ -81,12 +81,12 @@ const AttendanceChart = () => {
   return (
     <div className="bg-white rounded-xl h-full p-4">
       <div className="flex justify-between items-center">
-        <h1 className="text-lg font-semibold">Attendance</h1>
+        <h1 className="text-lg font-semibold">Visits</h1>
         <Image src="/moreDark.png" alt="" width={20} height={20} />
       </div>
       <ResponsiveContainer width="100%" height="90%">
         <BarChart width={500} height={300} data={data} barSize={20}>
-          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#ddd"/>
+          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#ddd" />
           <XAxis dataKey="name" axisLine={false} tickLine={false} />
           <YAxis axisLine={false} tickLine={false} />
           <Tooltip />
@@ -99,4 +99,4 @@ const AttendanceChart = () => {
     </div>
   );
 };
-export default AttendanceChart;
+export default VisitsChart;
