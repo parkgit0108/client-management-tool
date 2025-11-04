@@ -43,30 +43,6 @@ const menuItems = [
         visible: ["admin", "trainer", "client"],
       },
       {
-        icon: "/lesson.png",
-        label: "Lessons",
-        href: "/list/lessons",
-        visible: ["admin", "trainer", "client"],
-      },
-      {
-        icon: "/exam.png",
-        label: "Tests",
-        href: "/list/tests",
-        visible: ["admin", "trainer", "member", "client"],
-      },
-      {
-        icon: "/personalWorkouts.svg",
-        label: "Personal Workouts",
-        href: "/list/personalWorkouts",
-        visible: ["admin", "trainer", "client"],
-      },
-      {
-        icon: "/result.svg",
-        label: "Results",
-        href: "/list/results",
-        visible: ["admin", "trainer", "client"],
-      },
-      {
         icon: "/attendance.svg",
         label: "Attendance",
         href: "/list/attendance",
