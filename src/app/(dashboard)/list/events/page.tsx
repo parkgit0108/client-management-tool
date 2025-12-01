@@ -10,7 +10,7 @@ type Event = {
   id: number;
   title: string;
   location: string;
-  date: string; 
+  date: string;
   startTime: string;
   endTime: string;
 };
