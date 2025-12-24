@@ -11,7 +11,7 @@ const Announcements = () => {
         <div className="bg-mySkyLight rounded-md p-4">
           <div className="flex justify-between items-center">
             <h1 className="font-medium">Member of the month</h1>
-            <span className="text-sm text-gray-500">2025-12-01</span>
+            <span className="text-sm text-gray-500">2025-12-24</span>
           </div>
           <p className="text-gray-500 text-sm mt-1">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
@@ -22,7 +22,7 @@ const Announcements = () => {
         <div className="bg-mySkyLight rounded-md p-4">
           <div className="flex justify-between items-center">
             <h1 className="font-medium">Member of the month</h1>
-            <span className="text-sm text-gray-500">2025-12-01</span>
+            <span className="text-sm text-gray-500">2025-12-24</span>
           </div>
           <p className="text-gray-500 text-sm mt-1">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
@@ -33,7 +33,7 @@ const Announcements = () => {
         <div className="bg-mySkyLight rounded-md p-4">
           <div className="flex justify-between items-center">
             <h1 className="font-medium">Member of the month</h1>
-            <span className="text-sm text-gray-500">2025-12-01</span>
+            <span className="text-sm text-gray-500">2025-12-24</span>
           </div>
           <p className="text-gray-500 text-sm mt-1">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,

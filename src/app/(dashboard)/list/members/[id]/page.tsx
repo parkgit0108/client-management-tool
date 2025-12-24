@@ -1,3 +1,4 @@
+import Announcements from "@/components/Announcements";
 import BigCalendar from "@/components/BigCalendar";
 import Image from "next/image";
 import Link from "next/link";
@@ -38,7 +39,7 @@ const SingleMemberPage = () => {
                 </div>
                 <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
                   <Image src="/date.png" alt="" width={16} height={16} />
-                  <span>12/01/2025</span>
+                  <span>12/24/2025</span>
                 </div>
               </div>
             </div>
@@ -82,7 +83,7 @@ const SingleMemberPage = () => {
         </div>
       </div>
       {/* RIGHT */}
-      <div className="w-full xl:w-1/3">
+      <div className="w-full xl:w-1/3 flex flex-col gap-4">
         <div className="bg-white rounded-md p-4">
           <h1 className="text-xl font-semibold">Shortcuts</h1>
           <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
@@ -97,6 +98,7 @@ const SingleMemberPage = () => {
             </Link>
           </div>
         </div>
+        <Announcements />
       </div>
     </div>
   );
