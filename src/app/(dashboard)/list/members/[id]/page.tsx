@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
-const SingleTrainerPage = () => {
+const SingleMemberPage = () => {
   return (
     <div className="flex-1 p-4 flex flex-col gap-4 xl:flex-row">
       {/* LEFT */}
@@ -23,14 +23,14 @@ const SingleTrainerPage = () => {
               />
             </div>
             <div className="w-2/3 flex flex-col gap-4 justify-between">
-              <h1 className="text-lg font-semibold">Ronnie Coleman</h1>
+              <h1 className="text-lg font-semibold">Jay Cutler</h1>
               <p className="text-sm text-gray-500">
-                I am number 1 bodybuilder in the world.
+                I am number 2 bodybuilder in the world.
               </p>
               <div className="flex items-center justify-between gap-2 flex-wrap text-xs font-medium">
                 <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
                   <Image src="/mail.png" alt="" width={16} height={16} />
-                  <span>ronnie@coleman.com</span>
+                  <span>jay@cutler.com</span>
                 </div>
                 <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
                   <Image src="/phone.png" alt="" width={16} height={16} />
@@ -55,8 +55,8 @@ const SingleTrainerPage = () => {
                 className="w-6 h-6"
               />
               <div>
-                <h1 className="text-sm font-semibold">23</h1>
-                <p className="text-sm text-gray-400">Clients</p>
+                <h1 className="text-sm font-semibold">2</h1>
+                <p className="text-sm text-gray-400">Trainers</p>
               </div>
             </div>
             {/* CARD */}
@@ -87,13 +87,13 @@ const SingleTrainerPage = () => {
           <h1 className="text-xl font-semibold">Shortcuts</h1>
           <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
             <Link className="p-3 rounded-md bg-mySkyLight" href="/">
-              Trainer's Clients
+              Member's Trainer
             </Link>
             <Link className="p-3 rounded-md bg-myBlueLight" href="/">
-              Trainer's Classes
+              Member's Classes
             </Link>
             <Link className="p-3 rounded-md bg-mySkyLight" href="/">
-              Trainer's Workouts
+              Member's Workouts
             </Link>
           </div>
         </div>
@@ -102,4 +102,4 @@ const SingleTrainerPage = () => {
   );
 };
 
-export default SingleTrainerPage;
+export default SingleMemberPage;

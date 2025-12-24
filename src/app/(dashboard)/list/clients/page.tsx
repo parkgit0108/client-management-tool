@@ -5,6 +5,7 @@ import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import Link from "next/link";
 import { ptClientsData, role } from "@/lib/data";
+import { FormModal } from "@/components/FormModal";
 
 type PTClient = {
   id: number;
@@ -73,15 +74,16 @@ const ClientsList = () => {
       <td className="hidden md:table-cell">{item.phone}</td>
       <td className="hidden md:table-cell">{item.address}</td>
       <div className="flex gap-2">
-        <Link href={`/list/trainers/${item.id}`}>
+        {/* <Link href={`/list/trainers/${item.id}`}>
           <button className="w-7 h-7 flex items-center justify-center rounded-full bg-myBlueLight">
             <Image src="/edit.png" alt="" width={16} height={16} />
           </button>
-        </Link>
+        </Link> */}
         {role === "admin" && (
-          <button className="w-7 h-7 flex items-center justify-center rounded-full bg-myGray">
-            <Image src="/delete.png" alt="" width={16} height={16} />
-          </button>
+          <>
+            <FormModal table="clients" type="update" data={item} />
+            <FormModal table="clients" type="delete" id={item.id} />
+          </>
         )}
       </div>
     </tr>
@@ -102,9 +104,7 @@ const ClientsList = () => {
               <Image src="/sort.png" alt="" width={14} height={14} />
             </button>
             {role === "admin" && (
-              <button className="w-8 h-8 flex items-center justify-center rounded-full bg-myBlueLight">
-                <Image src="/plus.png" alt="" width={14} height={14} />
-              </button>
+              <FormModal table="clients" type="create" />
             )}
           </div>
         </div>

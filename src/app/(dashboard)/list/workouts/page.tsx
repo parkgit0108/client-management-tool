@@ -5,6 +5,7 @@ import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import Link from "next/link";
 import { role, workoutsData } from "@/lib/data";
+import { FormModal } from "@/components/FormModal";
 
 type Workout = {
   id: number;
@@ -38,15 +39,12 @@ const WorkoutsList = () => {
       <td className="flex items-center gap-2 p-2">{item.name}</td>
       <td className="hidden md:table-cell">{item.trainers.join(",")}</td>
       <div className="flex gap-2">
-        <Link href={`/list/trainers/${item.id}`}>
-          <button className="w-7 h-7 flex items-center justify-center rounded-full bg-myBlueLight">
-            <Image src="/edit.png" alt="" width={16} height={16} />
-          </button>
-        </Link>
+
         {role === "admin" && (
-          <button className="w-7 h-7 flex items-center justify-center rounded-full bg-myGray">
-            <Image src="/delete.png" alt="" width={16} height={16} />
-          </button>
+          <>
+            <FormModal table="workouts" type="update" data={item} />
+            <FormModal table="workouts" type="delete" id={item.id} />
+          </>
         )}
       </div>
     </tr>
@@ -69,9 +67,7 @@ const WorkoutsList = () => {
               <Image src="/sort.png" alt="" width={14} height={14} />
             </button>
             {role === "admin" && (
-              <button className="w-8 h-8 flex items-center justify-center rounded-full bg-myBlueLight">
-                <Image src="/plus.png" alt="" width={14} height={14} />
-              </button>
+              <FormModal table="workouts" type="create" />
             )}
           </div>
         </div>
