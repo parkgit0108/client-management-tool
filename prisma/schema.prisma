@@ -1,0 +1,119 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Admin {
+  id       String @id
+  username String @unique
+}
+
+model Member {
+  id          String       @id
+  username    String       @unique
+  name        String
+  surname     String
+  email       String? @unique
+  phone       String? @unique
+  address     String
+  img         String?
+  sex         UserSex
+  createdAt   DateTime     @default(now())
+  client      Client?      @relation(fields: [clientId], references: [id])
+  clientId    String?      @unique
+  classes     Class[]
+  attendances Attendance[]
+}
+
+model Trainer {
+  id        String   @id
+  username  String   @unique
+  name      String
+  surname   String
+  email     String? @unique
+  phone     String? @unique
+  address   String
+  img       String?
+  sex       UserSex
+  createdAt DateTime @default(now())
+  clients   Client[]
+  classes   Class[]
+}
+
+model Client {
+  id        String   @id
+  username  String   @unique
+  name      String
+  surname   String
+  email     String? @unique
+  phone     String? @unique
+  address   String
+  createdAt DateTime @default(now())
+  trainer   Trainer? @relation(fields: [trainerId], references: [id])
+  trainerId String?
+  member    Member?
+}
+
+model Class {
+  id            Int            @id @default(autoincrement())
+  name          String         @unique
+  day           Day
+  capacity      Int
+  startTime     DateTime
+  endTime       DateTime
+  trainer       Trainer?       @relation(fields: [trainerId], references: [id])
+  trainerId     String?
+  members       Member[]
+  attendances   Attendance[]
+  events        Event[]
+  announcements Announcement[]
+}
+
+model Attendance {
+  id      Int      @id @default(autoincrement())
+  date    DateTime
+  present Boolean
+
+  memberId String
+  member   Member? @relation(fields: [memberId], references: [id])
+  classId  Int
+  class    Class?  @relation(fields: [classId], references: [id])
+}
+
+model Event {
+  id          Int    @id @default(autoincrement())
+  title       String
+  description String
+  startDate   DateTime
+  endDate     DateTime
+
+  classId Int?
+  class   Class? @relation(fields: [classId], references: [id])
+}
+
+model Announcement {
+  id          Int    @id @default(autoincrement())
+  title       String
+  description String
+  date        DateTime
+
+  classId Int?
+  class   Class? @relation(fields: [classId], references: [id])
+}
+
+enum UserSex {
+  MALE
+  FEMALE
+}
+
+enum Day {
+  MONDAY
+  TUESDAY
+  WEDNESDAY
+  THURSDAY
+  FRIDAY
+}
