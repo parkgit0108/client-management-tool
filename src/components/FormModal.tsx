@@ -2,7 +2,48 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import { TrainerForm } from "./forms/TrainerForm";
+import dynamic from "next/dynamic";
+
+const TrainerForm = dynamic(
+  () => import("./forms/TrainerForm").then((mod) => mod.TrainerForm),
+  { loading: () => <div>Loading...</div> }
+);
+const MemberForm = dynamic(
+  () => import("./forms/MemberForm").then((mod) => mod.MemberForm),
+  { loading: () => <div>Loading...</div> }
+);
+const ClientForm = dynamic(
+  () => import("./forms/ClientForm").then((mod) => mod.ClientForm),
+  { loading: () => <div>Loading...</div> }
+);
+const ClassesForm = dynamic(
+  () => import("./forms/ClassForm").then((mod) => mod.ClassForm),
+  { loading: () => <div>Loading...</div> }
+);
+const AttendanceForm = dynamic(
+  () => import("./forms/AttendanceForm").then((mod) => mod.AttendanceForm),
+  { loading: () => <div>Loading...</div> }
+);
+const EventsForm = dynamic(
+  () => import("./forms/EventsForm").then((mod) => mod.EventsForm),
+  { loading: () => <div>Loading...</div> }
+);
+const AnnouncementForm = dynamic(
+  () => import("./forms/AnnouncementForm").then((mod) => mod.AnnouncementForm),
+  { loading: () => <div>Loading...</div> }
+);
+
+const forms: {
+  [key: string]: (type: "create" | "update", data?: any) => JSX.Element;
+} = {
+  trainers: (type, data) => <TrainerForm type={type} data={data} />,
+  members: (type, data) => <MemberForm type={type} data={data} />,
+  clients: (type, data) => <ClientForm type={type} data={data} />,
+  classes: (type, data) => <ClassesForm type={type} data={data} />,
+  attendance: (type, data) => <AttendanceForm type={type} data={data} />,
+  events: (type, data) => <EventsForm type={type} data={data} />,
+  announcements: (type, data) => <AnnouncementForm type={type} data={data} />,
+};
 
 export const FormModal = ({
   table,
@@ -44,8 +85,10 @@ export const FormModal = ({
           Delete
         </button>
       </form>
+    ) : type === "create" || type === "update" ? (
+      forms[table](type, data)
     ) : (
-      <TrainerForm type="create" />
+      "Form not found"
     );
   };
 

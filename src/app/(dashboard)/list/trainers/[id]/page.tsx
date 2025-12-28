@@ -1,5 +1,6 @@
 import Announcements from "@/components/Announcements";
 import BigCalendar from "@/components/BigCalendar";
+import { FormModal } from "@/components/FormModal";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -24,7 +25,27 @@ const SingleTrainerPage = () => {
               />
             </div>
             <div className="w-2/3 flex flex-col gap-4 justify-between">
-              <h1 className="text-lg font-semibold">Ronnie Coleman</h1>
+              <div className="flex items-center gap-2">
+                <h1 className="text-lg font-semibold">Ronnie Coleman</h1>
+                <FormModal
+                  table="trainers"
+                  type="update"
+                  data={{
+                    id: 1,
+                    username: "Ronnie Coleman",
+                    email: "ronnie@coleman.com",
+                    password: "1234567890",
+                    firstName: "Ronnie",
+                    lastName: "Coleman",
+                    phone: "+64 21 123 4567",
+                    address: "123 Main St, Anytown, NZ",
+                    birthday: "2000-01-02",
+                    sex: "male",
+                    image:
+                      "https://i0.wp.com/www.muscleandfitness.com/wp-content/uploads/2014/01/13flex_ronnie-coleman_most-muscular_inset.jpg?quality=40&strip=all",
+                  }}
+                />
+              </div>
               <p className="text-sm text-gray-500">
                 I am number 1 bodybuilder in the world.
               </p>
