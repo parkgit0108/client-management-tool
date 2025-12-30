@@ -10,26 +10,49 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
+    "@prisma/adapter-pg": "^7.2.0",
+    "@prisma/client": "^7.2.0",
     "@types/react-big-calendar": "^1.16.3",
+    "dotenv": "^17.2.3",
     "moment": "^2.30.1",
     "next": "14.2.5",
-    "prisma": "^7.2.0",
+    "pg": "^8.16.3",
     "react": "^18",
     "react-big-calendar": "^1.19.4",
     "react-calendar": "^6.0.0",
     "react-dom": "^18",
     "react-hook-form": "^7.69.0",
     "recharts": "^3.2.1",
+    "ts-node": "^10.9.2",
     "zod": "^4.2.1"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^20.19.27",
+    "@types/pg": "^8.16.0",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
     "postcss": "^8",
+    "prisma": "^7.2.0",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
-  }
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+  },
+  "description": "First, run the development server:",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parkgit0108/client-management-tool.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/parkgit0108/client-management-tool/issues"
+  },
+  "homepage": "https://github.com/parkgit0108/client-management-tool#readme"
 }

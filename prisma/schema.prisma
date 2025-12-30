@@ -27,6 +27,7 @@ model Member {
   clientId    String?      @unique
   classes     Class[]
   attendances Attendance[]
+  birthday  DateTime
 }
 
 model Trainer {
@@ -37,6 +38,7 @@ model Trainer {
   email     String? @unique
   phone     String? @unique
   address   String
+  birthday  DateTime
   img       String?
   sex       UserSex
   createdAt DateTime @default(now())
@@ -56,6 +58,7 @@ model Client {
   trainer   Trainer? @relation(fields: [trainerId], references: [id])
   trainerId String?
   member    Member?
+  birthday  DateTime
 }
 
 model Class {
