@@ -1,4 +1,4 @@
-import { Day, PrismaClient, UserSex } from "../src/generated/prisma";
+import { Day, PrismaClient, UserSex } from "@prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { Pool } from "pg";
 import "dotenv/config";

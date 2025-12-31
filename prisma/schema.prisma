@@ -1,6 +1,5 @@
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
 }
 
 datasource db {
@@ -17,8 +16,8 @@ model Member {
   username    String       @unique
   name        String
   surname     String
-  email       String? @unique
-  phone       String? @unique
+  email       String?      @unique
+  phone       String?      @unique
   address     String
   img         String?
   sex         UserSex
@@ -27,7 +26,7 @@ model Member {
   clientId    String?      @unique
   classes     Class[]
   attendances Attendance[]
-  birthday  DateTime
+  birthday    DateTime
 }
 
 model Trainer {
@@ -35,8 +34,8 @@ model Trainer {
   username  String   @unique
   name      String
   surname   String
-  email     String? @unique
-  phone     String? @unique
+  email     String?  @unique
+  phone     String?  @unique
   address   String
   birthday  DateTime
   img       String?
@@ -51,8 +50,8 @@ model Client {
   username  String   @unique
   name      String
   surname   String
-  email     String? @unique
-  phone     String? @unique
+  email     String?  @unique
+  phone     String?  @unique
   address   String
   createdAt DateTime @default(now())
   trainer   Trainer? @relation(fields: [trainerId], references: [id])
@@ -88,7 +87,7 @@ model Attendance {
 }
 
 model Event {
-  id          Int    @id @default(autoincrement())
+  id          Int      @id @default(autoincrement())
   title       String
   description String
   startDate   DateTime
@@ -99,7 +98,7 @@ model Event {
 }
 
 model Announcement {
-  id          Int    @id @default(autoincrement())
+  id          Int      @id @default(autoincrement())
   title       String
   description String
   date        DateTime
