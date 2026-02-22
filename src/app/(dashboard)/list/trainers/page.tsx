@@ -101,6 +101,11 @@ const TrainersList = async ({
         switch(key){
           case "classId":{
             query.classes = { some: { id: parseInt(value) } };
+            break;
+          }
+          case "search":{
+            query.name = { contains: value, mode: "insensitive" };
+            break;
           }
         }
       }
