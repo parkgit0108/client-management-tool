@@ -74,7 +74,7 @@ const MembersList = () => {
       <td className="hidden md:table-cell">{item.phone}</td>
       <td className="hidden md:table-cell">{item.address}</td>
       <div className="flex gap-2">
-        <Link href={`/list/trainers/${item.id}`}>
+        <Link href={`/list/members/${item.id}`}>
           <button className="w-7 h-7 flex items-center justify-center rounded-full bg-myBlueLight">
             <Image src="/view.png" alt="" width={16} height={16} />
           </button>

@@ -5,7 +5,7 @@ import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import Link from "next/link";
 import { role, trainersData } from "@/lib/data";
-import { Class, Trainer } from "@prisma/client";
+import { Class, Prisma, Trainer } from "@prisma/client";
 import { FormModal } from "@/components/FormModal";
 import prisma from "@/lib/prisma";
 import { ITEM_PER_PAGE } from "@/lib/settings";
@@ -89,19 +89,34 @@ const TrainersList = async ({
 }: {
   searchParams: { [key: string]: string | undefined };
 }) => {
-  const { page, ...qeuryParams } = searchParams;
+  const { page, ...queryParams } = searchParams;
 
   const p = page ? parseInt(page) : 1;
 
+  const query: Prisma.TrainerWhereInput = {};
+
+  if (queryParams){
+    for (const [key, value] of Object.entries(queryParams)){
+      if(value !== undefined){
+        switch(key){
+          case "classId":{
+            query.classes = { some: { id: parseInt(value) } };
+          }
+        }
+      }
+    }
+  }
+
   const [data, count] = await prisma.$transaction([
     prisma.trainer.findMany({
+      where: query,
       include: {
         classes: true,
       },
       take: ITEM_PER_PAGE,
       skip: ITEM_PER_PAGE * (p - 1),
     }),
-    prisma.trainer.count(),
+    prisma.trainer.count({where: query}),
   ]);
 
   console.log(count);
