@@ -22,11 +22,11 @@ model Member {
   img         String?
   sex         UserSex
   createdAt   DateTime     @default(now())
-  client      Client?      @relation(fields: [clientId], references: [id])
-  clientId    String?      @unique
   classes     Class[]
   attendances Attendance[]
   birthday    DateTime
+  trainerId   String?
+  trainer     Trainer?     @relation(fields: [trainerId], references: [id])
 }
 
 model Trainer {
@@ -41,23 +41,8 @@ model Trainer {
   img       String?
   sex       UserSex
   createdAt DateTime @default(now())
-  clients   Client[]
   classes   Class[]
-}
-
-model Client {
-  id        String   @id
-  username  String   @unique
-  name      String
-  surname   String
-  email     String?  @unique
-  phone     String?  @unique
-  address   String
-  createdAt DateTime @default(now())
-  trainer   Trainer? @relation(fields: [trainerId], references: [id])
-  trainerId String?
-  member    Member?
-  birthday  DateTime
+  members   Member[]
 }
 
 model Class {

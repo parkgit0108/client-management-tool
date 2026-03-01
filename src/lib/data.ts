@@ -247,27 +247,6 @@ export const membersData = [
   },
 ];
 
-export const ptClientsData = [
-  {
-    id: 1,
-    clientId: "1234567890",
-    name: "John Doe",
-    trainer: ["Sarah Brewer"],
-    email: "john@doe.com",
-    phone: "1234567890",
-    address: "123 Main St, Anytown, NZ",
-  },
-  {
-    id: 2,
-    clientId: "1234567890",
-    name: "Jane Doe",
-    trainer: ["Cecilia Bradley"],
-    email: "jane@doe.com",
-    phone: "1234567890",
-    address: "123 Main St, Anytown, NZ",
-  },
-];
-
 export const workoutsData = [
   {
     id: 1,

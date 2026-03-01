@@ -53,25 +53,7 @@ async function main() {
         sex: i % 2 === 0 ? UserSex.MALE : UserSex.FEMALE,
         classes: { connect: [{ id: (i % 6) + 1 }] },
         birthday: new Date(
-          new Date().setFullYear(new Date().getFullYear() - 30)
-        ),
-      },
-    });
-  }
-
-  // CLIENT
-  for (let i = 1; i <= 25; i++) {
-    await prisma.client.create({
-      data: {
-        id: `client${i}`,
-        username: `client${i}`,
-        name: `CName ${i}`,
-        surname: `CSurname ${i}`,
-        email: `client${i}@example.com`,
-        phone: `123-456-789${i}`,
-        address: `Address${i}`,
-        birthday: new Date(
-          new Date().setFullYear(new Date().getFullYear() - 25)
+          new Date().setFullYear(new Date().getFullYear() - 30),
         ),
       },
     });
@@ -89,10 +71,10 @@ async function main() {
         phone: `987-654-321${i}`,
         address: `Address${i}`,
         sex: i % 2 === 0 ? UserSex.MALE : UserSex.FEMALE,
-        clientId: i <= 25 ? `client${i}` : null,
+        trainerId: i <= 15 ? `trainer${i}` : null,
         classes: { connect: [{ id: (i % 6) + 1 }] },
         birthday: new Date(
-          new Date().setFullYear(new Date().getFullYear() - 20)
+          new Date().setFullYear(new Date().getFullYear() - 20),
         ),
       },
     });

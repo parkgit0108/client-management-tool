@@ -78,7 +78,7 @@ const SingleTrainerPage = () => {
               />
               <div>
                 <h1 className="text-sm font-semibold">23</h1>
-                <p className="text-sm text-gray-400">Clients</p>
+                <p className="text-sm text-gray-400">Members</p>
               </div>
             </div>
             {/* CARD */}
@@ -109,7 +109,7 @@ const SingleTrainerPage = () => {
           <h1 className="text-xl font-semibold">Shortcuts</h1>
           <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
             <Link className="p-3 rounded-md bg-mySkyLight" href="/">
-              Trainer's Clients
+              Trainer's Members
             </Link>
             <Link className="p-3 rounded-md bg-myBlueLight" href="/">
               Trainer's Classes

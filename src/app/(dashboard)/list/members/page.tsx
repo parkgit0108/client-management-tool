@@ -4,13 +4,13 @@ import Image from "next/image";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import Link from "next/link";
-import { membersData, role } from "@/lib/data";
+import { role } from "@/lib/data";
 import { FormModal } from "@/components/FormModal";
-import { Class, Member, Prisma } from "@prisma/client";
+import { Member, Prisma, Trainer } from "@/generated/prisma";
 import { ITEM_PER_PAGE } from "@/lib/settings";
 import prisma from "@/lib/prisma";
 
-type MemberList = Member & { classes: Class[] }
+type MemberList = Member & { trainer: Trainer | null };
 
 const columns = [
   {
@@ -20,6 +20,11 @@ const columns = [
   {
     header: "Member ID",
     accessor: "memberId",
+    className: "hidden md:table-cell",
+  },
+  {
+    header: "Trainer",
+    accessor: "trainer",
     className: "hidden md:table-cell",
   },
   {
@@ -58,6 +63,9 @@ const renderRow = (item: MemberList) => (
       </div>
     </td>
     <td className="hidden md:table-cell">{item.id}</td>
+    <td className="hidden md:table-cell">
+      {item.trainer?.name || "-"}
+    </td>
     <td className="hidden md:table-cell">{item.phone}</td>
     <td className="hidden md:table-cell">{item.address}</td>
     <div className="flex gap-2">
@@ -75,7 +83,7 @@ const renderRow = (item: MemberList) => (
     </div>
   </tr>
 );
-const MembersList =  async ({
+const MembersList = async ({
   searchParams,
 }: {
   searchParams: { [key: string]: string | undefined };
@@ -86,14 +94,14 @@ const MembersList =  async ({
 
   const query: Prisma.MemberWhereInput = {};
 
-  if (queryParams){
-    for (const [key, value] of Object.entries(queryParams)){
-      if(value !== undefined){
-        switch(key){
+  if (queryParams) {
+    for (const [key, value] of Object.entries(queryParams)) {
+      if (value !== undefined) {
+        switch (key) {
           case "trainerId":
-            query.client = { trainerId: value };
+            query.trainerId = value;
             break;
-          case "search":{
+          case "search": {
             query.name = { contains: value, mode: "insensitive" };
             break;
           }
@@ -106,12 +114,12 @@ const MembersList =  async ({
     prisma.member.findMany({
       where: query,
       include: {
-        classes: true,
+        trainer: true,
       },
       take: ITEM_PER_PAGE,
       skip: ITEM_PER_PAGE * (p - 1),
     }),
-    prisma.member.count({where: query}),
+    prisma.member.count({ where: query }),
   ]);
 
   return (
@@ -132,7 +140,7 @@ const MembersList =  async ({
               // <button className="w-8 h-8 flex items-center justify-center rounded-full bg-myBlueLight">
               //   <Image src="/plus.png" alt="" width={14} height={14} />
               // </button>
-              <FormModal table="members" type="create"/>
+              <FormModal table="members" type="create" />
             )}
           </div>
         </div>

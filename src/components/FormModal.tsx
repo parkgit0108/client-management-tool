@@ -12,10 +12,6 @@ const MemberForm = dynamic(
   () => import("./forms/MemberForm").then((mod) => mod.MemberForm),
   { loading: () => <div>Loading...</div> }
 );
-const ClientForm = dynamic(
-  () => import("./forms/ClientForm").then((mod) => mod.ClientForm),
-  { loading: () => <div>Loading...</div> }
-);
 const ClassesForm = dynamic(
   () => import("./forms/ClassForm").then((mod) => mod.ClassForm),
   { loading: () => <div>Loading...</div> }
@@ -38,7 +34,6 @@ const forms: {
 } = {
   trainers: (type, data) => <TrainerForm type={type} data={data} />,
   members: (type, data) => <MemberForm type={type} data={data} />,
-  clients: (type, data) => <ClientForm type={type} data={data} />,
   classes: (type, data) => <ClassesForm type={type} data={data} />,
   attendance: (type, data) => <AttendanceForm type={type} data={data} />,
   events: (type, data) => <EventsForm type={type} data={data} />,
@@ -54,7 +49,6 @@ export const FormModal = ({
   table:
     | "trainers"
     | "members"
-    | "clients"
     | "classes"
     | "workouts"
     | "attendance"

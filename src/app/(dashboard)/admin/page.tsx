@@ -14,7 +14,6 @@ const AdminPage = () => {
         <div className="flex gap-4 justify-between flex-wrap">
           <UserCard type="member" />
           <UserCard type="trainer" />
-          <UserCard type="client" />
           <UserCard type="admin" />
         </div>
 
