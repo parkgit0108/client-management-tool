@@ -107,6 +107,8 @@ const TrainersList = async ({
             query.name = { contains: value, mode: "insensitive" };
             break;
           }
+          default:
+            break;
         }
       }
     }

@@ -108,8 +108,8 @@ const SingleTrainerPage = () => {
         <div className="bg-white rounded-md p-4">
           <h1 className="text-xl font-semibold">Shortcuts</h1>
           <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
-            <Link className="p-3 rounded-md bg-mySkyLight" href="/">
-              Trainer's Members
+            <Link className="p-3 rounded-md bg-mySkyLight" href={`/list/members?trainerId=${"trainer2"}`}>
+              Trainer's Clients
             </Link>
             <Link className="p-3 rounded-md bg-myBlueLight" href="/">
               Trainer's Classes
