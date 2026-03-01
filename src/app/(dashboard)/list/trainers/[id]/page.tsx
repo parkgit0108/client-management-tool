@@ -114,9 +114,6 @@ const SingleTrainerPage = () => {
             <Link className="p-3 rounded-md bg-myBlueLight" href="/">
               Trainer's Classes
             </Link>
-            <Link className="p-3 rounded-md bg-mySkyLight" href="/">
-              Trainer's Workouts
-            </Link>
           </div>
         </div>
         <Announcements />

@@ -10,7 +10,6 @@ export const trainersData = [
     photo:
       "https://images.pexels.com/photos/2888150/pexels-photo-2888150.jpeg?auto=compress&cs=tinysrgb&w=1200",
     phone: "1234567890",
-    workouts: ["Hypertrophy"],
     classes: ["1B", "2A", "3C"],
     address: "123 Main St, Anytown, NZ",
   },
@@ -22,7 +21,6 @@ export const trainersData = [
     photo:
       "https://images.pexels.com/photos/936126/pexels-photo-936126.jpeg?auto=compress&cs=tinysrgb&w=1200",
     phone: "1234567890",
-    workouts: ["Running", "Crossfit"],
     classes: ["5A", "4B", "3C"],
     address: "123 Main St, Anytown, NZ",
   },
@@ -34,7 +32,6 @@ export const trainersData = [
     photo:
       "https://images.pexels.com/photos/428328/pexels-photo-428328.jpeg?auto=compress&cs=tinysrgb&w=1200",
     phone: "1234567890",
-    workouts: ["Boxing"],
     classes: ["5A", "4B", "3C"],
     address: "123 Main St, Anytown, NZ",
   },
@@ -46,7 +43,6 @@ export const trainersData = [
     photo:
       "https://images.pexels.com/photos/1187765/pexels-photo-1187765.jpeg?auto=compress&cs=tinysrgb&w=1200",
     phone: "1234567890",
-    workouts: ["Swimming"],
     classes: ["5A", "4B", "3C"],
     address: "123 Main St, Anytown, NZ",
   },
@@ -58,7 +54,6 @@ export const trainersData = [
     photo:
       "https://images.pexels.com/photos/1102341/pexels-photo-1102341.jpeg?auto=compress&cs=tinysrgb&w=1200",
     phone: "1234567890",
-    workouts: ["Juijitsu", "Swimming"],
     classes: ["5A", "4B", "3C"],
     address: "123 Main St, Anytown, NZ",
   },
@@ -70,7 +65,6 @@ export const trainersData = [
     photo:
       "https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=1200",
     phone: "1234567890",
-    workouts: ["Running"],
     classes: ["5A", "4B", "3C"],
     address: "123 Main St, Anytown, NZ",
   },
@@ -82,7 +76,6 @@ export const trainersData = [
     photo:
       "https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=1200",
     phone: "1234567890",
-    workouts: ["Strength"],
     classes: ["5A", "4B", "3C"],
     address: "123 Main St, Anytown, NZ",
   },
@@ -94,7 +87,6 @@ export const trainersData = [
     photo:
       "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1200",
     phone: "1234567890",
-    workouts: ["Hypertrophy"],
     classes: ["5A", "4B", "3C"],
     address: "123 Main St, Anytown, NZ",
   },
@@ -106,7 +98,6 @@ export const trainersData = [
     photo:
       "https://images.pexels.com/photos/842980/pexels-photo-842980.jpeg?auto=compress&cs=tinysrgb&w=1200",
     phone: "1234567890",
-    workouts: ["Judo", "Strength"],
     classes: ["5A", "4B", "3C"],
     address: "123 Main St, Anytown, NZ",
   },
@@ -118,7 +109,6 @@ export const trainersData = [
     photo:
       "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=1200",
     phone: "1234567890",
-    workouts: ["Boxing"],
     classes: ["5A", "4B", "3C"],
     address: "123 Main St, Anytown, NZ",
   },
@@ -244,59 +234,6 @@ export const membersData = [
     grade: 5,
     class: "5A",
     address: "123 Main St, Anytown, NZ",
-  },
-];
-
-export const workoutsData = [
-  {
-    id: 1,
-    name: "Hypertrophy",
-    trainers: ["Alice Phelps", "Russell Davidson"],
-  },
-  {
-    id: 2,
-    name: "Strength",
-    trainers: ["Manuel Becker", "Eddie Chavez"],
-  },
-  {
-    id: 3,
-    name: "Running",
-    trainers: ["Lola Newman", "Darrell Delgado"],
-  },
-  {
-    id: 4,
-    name: "Crossfit",
-    trainers: ["Nathan Kelly", "Benjamin Snyder"],
-  },
-  {
-    id: 5,
-    name: "Boxing",
-    trainers: ["Alma Benson", "Lina Collier"],
-  },
-  {
-    id: 6,
-    name: "Swimming",
-    trainers: ["Hannah Bowman", "Betty Obrien"],
-  },
-  {
-    id: 7,
-    name: "Yoga",
-    trainers: ["Lora French", "Sue Brady"],
-  },
-  {
-    id: 8,
-    name: "Zoomba",
-    trainers: ["Harriet Alvarado", "Mayme Keller"],
-  },
-  {
-    id: 9,
-    name: "Juijitsu",
-    trainers: ["Gertrude Roy", "Rosa Singleton"],
-  },
-  {
-    id: 10,
-    name: "Judo",
-    trainers: ["Effie Lynch", "Brett Flowers"],
   },
 ];
 
@@ -460,79 +397,6 @@ export const testsData = [
     class: "8A",
     trainer: "Vera Soto",
     date: "2025-12-24",
-  },
-];
-
-export const peronalWorkoutsData = [
-  {
-    id: 1,
-    subject: "Hypertrophy",
-    class: "1A",
-    trainer: "Anthony Boone",
-    dueDate: "2025-12-24",
-  },
-  {
-    id: 2,
-    subject: "Strength",
-    class: "2A",
-    trainer: "Clifford Bowen",
-    dueDate: "2025-12-24",
-  },
-  {
-    id: 3,
-    subject: "Kickboxing",
-    class: "3A",
-    trainer: "Catherine Malone",
-    dueDate: "2025-12-24",
-  },
-  {
-    id: 4,
-    subject: "Social Studies",
-    class: "1B",
-    trainer: "Willie Medina",
-    dueDate: "2025-12-24",
-  },
-  {
-    id: 5,
-    subject: "Zoomba",
-    class: "4A",
-    trainer: "Jose Ruiz",
-    dueDate: "2025-12-24",
-  },
-  {
-    id: 6,
-    subject: "Juijitsu",
-    class: "5A",
-    trainer: "Katharine Owens",
-    dueDate: "2025-12-24",
-  },
-  {
-    id: 7,
-    subject: "Swimming",
-    class: "6A",
-    trainer: "Shawn Norman",
-    dueDate: "2025-12-24",
-  },
-  {
-    id: 8,
-    subject: "Yoga",
-    class: "6B",
-    trainer: "Don Holloway",
-    dueDate: "2025-12-24",
-  },
-  {
-    id: 9,
-    subject: "Running",
-    class: "7A",
-    trainer: "Franklin Gregory",
-    dueDate: "2025-12-24",
-  },
-  {
-    id: 10,
-    subject: "Crossfit",
-    class: "8A",
-    trainer: "Danny Nguyen",
-    dueDate: "2025-12-24",
   },
 ];
 

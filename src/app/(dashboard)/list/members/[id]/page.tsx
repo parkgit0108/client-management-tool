@@ -93,9 +93,6 @@ const SingleMemberPage = () => {
             <Link className="p-3 rounded-md bg-myBlueLight" href="/">
               Member's Classes
             </Link>
-            <Link className="p-3 rounded-md bg-mySkyLight" href="/">
-              Member's Workouts
-            </Link>
           </div>
         </div>
         <Announcements />

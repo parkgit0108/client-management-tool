@@ -25,12 +25,6 @@ const menuItems = [
         visible: ["admin", "trainer"],
       },
       {
-        icon: "/workout.svg",
-        label: "Workouts",
-        href: "/list/workouts",
-        visible: ["admin"],
-      },
-      {
         icon: "/class.png",
         label: "Classes",
         href: "/list/classes",
