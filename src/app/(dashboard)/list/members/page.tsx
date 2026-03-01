@@ -6,17 +6,11 @@ import Table from "@/components/Table";
 import Link from "next/link";
 import { membersData, role } from "@/lib/data";
 import { FormModal } from "@/components/FormModal";
+import { Class, Member, Prisma } from "@prisma/client";
+import { ITEM_PER_PAGE } from "@/lib/settings";
+import prisma from "@/lib/prisma";
 
-type Member = {
-  id: number;
-  memberId: string;
-  name: string;
-  email?: string;
-  photo: string;
-  phone?: string;
-  grade: number;
-  address: string;
-};
+type MemberList = Member & { classes: Class[] }
 
 const columns = [
   {
@@ -26,11 +20,6 @@ const columns = [
   {
     header: "Member ID",
     accessor: "memberId",
-    className: "hidden md:table-cell",
-  },
-  {
-    header: "Grade",
-    accessor: "grade",
     className: "hidden md:table-cell",
   },
   {
@@ -50,44 +39,80 @@ const columns = [
   },
 ];
 
-const MembersList = () => {
-  const renderRow = (item: Member) => (
-    <tr
-      key={item.id}
-      className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-mySkyLight"
-    >
-      <td className="flex items-center gap-2 p-2">
-        <Image
-          src={item.photo}
-          alt=""
-          width={40}
-          height={40}
-          className="md:hidden xl:block w-10 h-10 rounded-full object-cover"
-        />
-        <div className="flex flex-col">
-          <h3 className="font-semibold">{item.name}</h3>
-          <p className="text-xs text-gray-500">{item.email}</p>
-        </div>
-      </td>
-      <td className="hidden md:table-cell">{item.memberId}</td>
-      <td className="hidden md:table-cell">{item.grade}</td>
-      <td className="hidden md:table-cell">{item.phone}</td>
-      <td className="hidden md:table-cell">{item.address}</td>
-      <div className="flex gap-2">
-        <Link href={`/list/members/${item.id}`}>
-          <button className="w-7 h-7 flex items-center justify-center rounded-full bg-myBlueLight">
-            <Image src="/view.png" alt="" width={16} height={16} />
-          </button>
-        </Link>
-        {role === "admin" && (
-          // <button className="w-7 h-7 flex items-center justify-center rounded-full bg-myGray">
-          //   <Image src="/delete.png" alt="" width={16} height={16} />
-          // </button>
-          <FormModal table="members" type="delete" id={item.id} />
-        )}
+const renderRow = (item: MemberList) => (
+  <tr
+    key={item.id}
+    className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-mySkyLight"
+  >
+    <td className="flex items-center gap-2 p-2">
+      <Image
+        src={item.img || "/noAvatar.png"}
+        alt=""
+        width={40}
+        height={40}
+        className="md:hidden xl:block w-10 h-10 rounded-full object-cover"
+      />
+      <div className="flex flex-col">
+        <h3 className="font-semibold">{item.name}</h3>
+        <p className="text-xs text-gray-500">{item.email}</p>
       </div>
-    </tr>
-  );
+    </td>
+    <td className="hidden md:table-cell">{item.id}</td>
+    <td className="hidden md:table-cell">{item.phone}</td>
+    <td className="hidden md:table-cell">{item.address}</td>
+    <div className="flex gap-2">
+      <Link href={`/list/members/${item.id}`}>
+        <button className="w-7 h-7 flex items-center justify-center rounded-full bg-myBlueLight">
+          <Image src="/view.png" alt="" width={16} height={16} />
+        </button>
+      </Link>
+      {role === "admin" && (
+        // <button className="w-7 h-7 flex items-center justify-center rounded-full bg-myGray">
+        //   <Image src="/delete.png" alt="" width={16} height={16} />
+        // </button>
+        <FormModal table="members" type="delete" id={item.id} />
+      )}
+    </div>
+  </tr>
+);
+const MembersList =  async ({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | undefined };
+}) => {
+  const { page, ...queryParams } = searchParams;
+
+  const p = page ? parseInt(page) : 1;
+
+  const query: Prisma.MemberWhereInput = {};
+
+  if (queryParams){
+    for (const [key, value] of Object.entries(queryParams)){
+      if(value !== undefined){
+        switch(key){
+          case "trainerId":
+            query.client = { trainerId: value };
+            break;
+          case "search":{
+            query.name = { contains: value, mode: "insensitive" };
+            break;
+          }
+        }
+      }
+    }
+  }
+
+  const [data, count] = await prisma.$transaction([
+    prisma.member.findMany({
+      where: query,
+      include: {
+        classes: true,
+      },
+      take: ITEM_PER_PAGE,
+      skip: ITEM_PER_PAGE * (p - 1),
+    }),
+    prisma.member.count({where: query}),
+  ]);
 
   return (
     <div className="bg-white p-4 rounded-md flex-1 m-4 mt-0">
@@ -113,9 +138,9 @@ const MembersList = () => {
         </div>
       </div>
       {/* LIST */}
-      <Table columns={columns} renderRow={renderRow} data={membersData} />
+      <Table columns={columns} renderRow={renderRow} data={data} />
       {/* Pagination */}
-      <Pagination />
+      <Pagination page={p} count={count} />
     </div>
   );
 };
